@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="zh-CN" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+</head>
+<body>
+    <!-- 侧边栏菜单组件 -->
+    <div th:fragment="sidebar">
+        <el-aside :class="['sidebar', { collapsed: collapsed }]">
+            <el-menu
+                default-active="1"
+                :background-color="'var(--sidebar-bg)'"
+                text-color="#d9d9d9"
+                :active-text-color="'var(--primary-color)'"
+                :collapse="collapsed"
+                style="border-right: none;">
+                
+                <el-menu-item index="1">
+                    <el-icon><House /></el-icon>
+                    <span>首页</span>
+                </el-menu-item>
+                
+                <el-sub-menu index="2">
+                    <template #title>
+                        <el-icon><User /></el-icon>
+                        <span>用户管理</span>
+                    </template>
+                    <el-menu-item index="2-1">用户列表</el-menu-item>
+                    <el-menu-item index="2-2">角色管理</el-menu-item>
+                    <el-menu-item index="2-3">权限管理</el-menu-item>
+                </el-sub-menu>
+                
+                <el-sub-menu index="3">
+                    <template #title>
+                        <el-icon><Document /></el-icon>
+                        <span>内容管理</span>
+                    </template>
+                    <el-menu-item index="3-1">文章管理</el-menu-item>
+                    <el-menu-item index="3-2">分类管理</el-menu-item>
+                </el-sub-menu>
+                
+                <el-menu-item index="4">
+                    <el-icon><DataAnalysis /></el-icon>
+                    <span>数据统计</span>
+                </el-menu-item>
+                
+                <el-menu-item index="5">
+                    <el-icon><Setting /></el-icon>
+                    <span>系统设置</span>
+                </el-menu-item>
+            </el-menu>
+        </el-aside>
+    </div>
+</body>
+</html>
