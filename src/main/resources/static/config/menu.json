@@ -1,0 +1,74 @@
+{
+  "menus": [
+    {
+      "id": "dashboard",
+      "name": "仪表盘",
+      "url": "/dashboard",
+      "icon": "fas fa-tachometer-alt",
+      "order": 1
+    },
+    {
+      "id": "users",
+      "name": "用户管理",
+      "url": "/users",
+      "icon": "fas fa-users",
+      "order": 2
+    },
+    {
+      "id": "movies",
+      "name": "电影管理",
+      "url": "/movies",
+      "icon": "fas fa-film",
+      "order": 3
+    },
+    {
+      "id": "categories",
+      "name": "分类管理",
+      "url": "/categories",
+      "icon": "fas fa-tags",
+      "order": 4
+    },
+    {
+      "id": "content",
+      "name": "内容管理",
+      "url": "/content",
+      "icon": "fas fa-file-alt",
+      "order": 5
+    },
+    {
+      "id": "analytics",
+      "name": "数据分析",
+      "url": "/analytics",
+      "icon": "fas fa-chart-bar",
+      "order": 6
+    },
+    {
+      "id": "reports",
+      "name": "报表中心",
+      "url": "/reports",
+      "icon": "fas fa-file-invoice",
+      "order": 7
+    },
+    {
+      "id": "settings",
+      "name": "系统设置",
+      "url": "/settings",
+      "icon": "fas fa-cog",
+      "order": 8
+    },
+    {
+      "id": "logs",
+      "name": "系统日志",
+      "url": "/logs",
+      "icon": "fas fa-list-alt",
+      "order": 9
+    },
+    {
+      "id": "help",
+      "name": "帮助中心",
+      "url": "/help",
+      "icon": "fas fa-question-circle",
+      "order": 10
+    }
+  ]
+}
