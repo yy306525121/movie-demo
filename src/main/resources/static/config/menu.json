@@ -1,74 +1,71 @@
 {
-  "menus": [
+  "menuItems": [
     {
-      "id": "dashboard",
-      "name": "仪表盘",
+      "id": "1",
+      "name": "首页",
+      "icon": "House",
       "url": "/dashboard",
-      "icon": "fas fa-tachometer-alt",
-      "order": 1
+      "type": "item"
     },
     {
-      "id": "users",
+      "id": "2",
       "name": "用户管理",
-      "url": "/users",
-      "icon": "fas fa-users",
-      "order": 2
+      "icon": "User",
+      "type": "submenu",
+      "children": [
+        {
+          "id": "2-1",
+          "name": "用户列表",
+          "icon": "UserFilled",
+          "url": "/user/list"
+        },
+        {
+          "id": "2-2",
+          "name": "角色管理",
+          "icon": "Avatar",
+          "url": "/user/roles"
+        },
+        {
+          "id": "2-3",
+          "name": "权限管理",
+          "icon": "Key",
+          "url": "/user/permissions"
+        }
+      ]
     },
     {
-      "id": "movies",
-      "name": "电影管理",
-      "url": "/movies",
-      "icon": "fas fa-film",
-      "order": 3
-    },
-    {
-      "id": "categories",
-      "name": "分类管理",
-      "url": "/categories",
-      "icon": "fas fa-tags",
-      "order": 4
-    },
-    {
-      "id": "content",
+      "id": "3",
       "name": "内容管理",
-      "url": "/content",
-      "icon": "fas fa-file-alt",
-      "order": 5
+      "icon": "Document",
+      "type": "submenu",
+      "children": [
+        {
+          "id": "3-1",
+          "name": "文章管理",
+          "icon": "EditPen",
+          "url": "/content/articles"
+        },
+        {
+          "id": "3-2",
+          "name": "分类管理",
+          "icon": "FolderOpened",
+          "url": "/content/categories"
+        }
+      ]
     },
     {
-      "id": "analytics",
-      "name": "数据分析",
-      "url": "/analytics",
-      "icon": "fas fa-chart-bar",
-      "order": 6
+      "id": "4",
+      "name": "数据统计",
+      "icon": "TrendCharts",
+      "url": "/statistics",
+      "type": "item"
     },
     {
-      "id": "reports",
-      "name": "报表中心",
-      "url": "/reports",
-      "icon": "fas fa-file-invoice",
-      "order": 7
-    },
-    {
-      "id": "settings",
+      "id": "5",
       "name": "系统设置",
+      "icon": "Setting",
       "url": "/settings",
-      "icon": "fas fa-cog",
-      "order": 8
-    },
-    {
-      "id": "logs",
-      "name": "系统日志",
-      "url": "/logs",
-      "icon": "fas fa-list-alt",
-      "order": 9
-    },
-    {
-      "id": "help",
-      "name": "帮助中心",
-      "url": "/help",
-      "icon": "fas fa-question-circle",
-      "order": 10
+      "type": "item"
     }
   ]
 }

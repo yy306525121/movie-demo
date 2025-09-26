@@ -15,39 +15,41 @@
                 :collapse="collapsed"
                 style="border-right: none;">
                 
-                <el-menu-item index="1">
-                    <el-icon><House /></el-icon>
-                    <span>首页</span>
-                </el-menu-item>
-                
-                <el-sub-menu index="2">
-                    <template #title>
-                        <el-icon><User /></el-icon>
-                        <span>用户管理</span>
-                    </template>
-                    <el-menu-item index="2-1">用户列表</el-menu-item>
-                    <el-menu-item index="2-2">角色管理</el-menu-item>
-                    <el-menu-item index="2-3">权限管理</el-menu-item>
-                </el-sub-menu>
-                
-                <el-sub-menu index="3">
-                    <template #title>
-                        <el-icon><Document /></el-icon>
-                        <span>内容管理</span>
-                    </template>
-                    <el-menu-item index="3-1">文章管理</el-menu-item>
-                    <el-menu-item index="3-2">分类管理</el-menu-item>
-                </el-sub-menu>
-                
-                <el-menu-item index="4">
-                    <el-icon><DataAnalysis /></el-icon>
-                    <span>数据统计</span>
-                </el-menu-item>
-                
-                <el-menu-item index="5">
-                    <el-icon><Setting /></el-icon>
-                    <span>系统设置</span>
-                </el-menu-item>
+                <!-- 动态渲染菜单项 -->
+                <template v-for="item in menuItems" :key="item.id">
+                    <!-- 普通菜单项 -->
+                    <el-menu-item 
+                        v-if="item.type === 'item'" 
+                        :index="item.id"
+                        @click="handleMenuClick(item)">
+                        <el-icon>
+                            <component :is="item.icon"></component>
+                        </el-icon>
+                        <span>{{ item.name }}</span>
+                    </el-menu-item>
+                    
+                    <!-- 子菜单 -->
+                    <el-sub-menu 
+                        v-else-if="item.type === 'submenu'" 
+                        :index="item.id">
+                        <template #title>
+                            <el-icon>
+                                <component :is="item.icon"></component>
+                            </el-icon>
+                            <span>{{ item.name }}</span>
+                        </template>
+                        <el-menu-item 
+                            v-for="child in item.children" 
+                            :key="child.id"
+                            :index="child.id"
+                            @click="handleMenuClick(child)">
+                            <el-icon v-if="child.icon">
+                                <component :is="child.icon"></component>
+                            </el-icon>
+                            <span>{{ child.name }}</span>
+                        </el-menu-item>
+                    </el-sub-menu>
+                </template>
             </el-menu>
         </el-aside>
     </div>
